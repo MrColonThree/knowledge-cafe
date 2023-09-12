@@ -7,6 +7,7 @@ import Header from "./Components/Header/Header";
 function App() {
   const [bookmarks, setBookmarks] = useState([]);
   const [readingTime, setReadingTime] = useState(0);
+
   const handleBookMark = (blog) => {
     const newBookmarks = [...bookmarks, blog];
     setBookmarks(newBookmarks);
@@ -23,7 +24,7 @@ function App() {
   return (
     <>
       <Header></Header>
-      <div className="flex gap-5">
+      <div className="flex flex-col md:flex-row gap-5">
         <Blogs
           handleMarkAsRead={handleMarkAsRead}
           handleBookMark={handleBookMark}

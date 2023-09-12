@@ -22,18 +22,25 @@ const Blog = ({ blog, handleBookMark, handleMarkAsRead }) => {
         <div className="flex gap-5">
           <img className="w-14" src={author_img} alt="" />
           <div>
-            <h1>{author}</h1>
+            <h1
+              className="text-xl
+             font-semibold"
+            >
+              {author}
+            </h1>
             <p>{posted_date}</p>
           </div>
         </div>
         <div>
-          <span>{reading_time} min read </span>
-          <button
-            onClick={() => handleBookMark(blog)}
-            className="text-red-600 text-xl"
-          >
-            <BsBookmark />
-          </button>
+          <div className="flex gap-2 items-center text-lg">
+            <span>{reading_time} min read </span>
+            <button
+              onClick={() => handleBookMark(blog)}
+              className="text-red-600 text-2xl font-bold hover:text-green-700"
+            >
+              <BsBookmark />
+            </button>
+          </div>
         </div>
       </div>
       <h2 className="text-4xl">{title}</h2>
@@ -47,7 +54,7 @@ const Blog = ({ blog, handleBookMark, handleMarkAsRead }) => {
       </p>
       <button
         className="text-purple-700 font-bold underline"
-        onClick={() => handleMarkAsRead(id,reading_time)}
+        onClick={() => handleMarkAsRead(id, reading_time)}
       >
         Mark as read
       </button>
